@@ -12,14 +12,12 @@
 
 .swiper-slide {
     opacity: 0 !important;
-
 }
 
 .swiper-slide-active {
     opacity: 1 !important;
     transition: opacity 0.6s ease;
 }
-
 
 
 .slide {
@@ -39,9 +37,6 @@
     height: 100%;
 }
 
-.text-content {
-
-}
 
 .text-content h1 {
     font-size: 3rem;
@@ -63,6 +58,7 @@
     max-width: 600px;
     height: auto;
 }
+
 .swiper-pagination-bullet {
     width: 30px;
     height: 5px;
@@ -79,18 +75,20 @@
 
 @media (max-width: 576px) {
     .slide-content {
-        margin-top: 220px;
+        margin-top: 60px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: start;
+        justify-content: center;
         padding: 0;
         gap: 40px;
+        align-items: center;
     }
     .text-content h1 {
         font-size: 1.5rem;
         margin-bottom: 1rem;
         width: 100%;
+        max-width: 100%;
         font-weight: 700;
         text-transform: uppercase;
         line-height: 2rem;
@@ -106,16 +104,88 @@
         max-width: 400px;
         height: auto;
     }
+    .swiper-slide {
+        width: 100% !important;
+    }
+    .slide {
+        padding: 0 1.5rem;
+    }
 }
 
 
 @media (min-width: 768px) {
+    .slide-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
 
+    }
+    .text-content h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        max-width: 100%;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 2rem;
+    }
+
+    .text-content p {
+        font-size: 16px;
+        line-height: 26px;
+        max-width: 550px;
+        opacity: .5;
+    }
+    .image-content img {
+        max-width: 400px;
+        height: auto;
+    }
+    .slide {
+        padding: 0 2.5rem;
+    }
 }
 
 
 @media (min-width: 992px) {
+    .slide {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 5rem;
+    }
 
+    .slide-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .text-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        max-width: 200px;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 4rem;
+    }
+
+    .text-content p {
+        font-size: 16px;
+        line-height: 26px;
+        max-width: 550px;
+        opacity: .5;
+    }
+
+    .image-content img {
+        max-width: 600px;
+        height: auto;
+    }
 }
 
 
