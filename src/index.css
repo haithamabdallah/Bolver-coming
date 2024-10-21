@@ -1,0 +1,56 @@
+/* -------------------------------------- */
+/* Global reset
+/* -------------------------------------- */
+*, html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, label, fieldset, input, p, blockquote, th, td { margin:0; padding:0 }
+table { border-collapse:collapse; border-spacing:0 }
+fieldset, img { border:0 }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal }
+ol, ul, li { list-style:none }
+caption, th { text-align:left }
+h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:normal }
+q:before, q:after { content:''}
+strong { font-weight: bold }
+em { font-style: italic }
+a img { border:none }
+img { vertical-align:middle; }
+strong, b, strong *, b * { font-weight: bold; } em, i, em *, i * { font-style: italic; }
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  animation: fadein 3s;
+}
+h1,h2,h3,h4,h5,h6,p {
+  font-family: "Roboto", sans-serif;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
