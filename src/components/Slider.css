@@ -150,18 +150,27 @@
 @media (min-width: 1400px) {
 
 }
-.swiper-pagination-bullet {
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    line-height: 20px;
-    font-size: 12px;
-    color: #000;
-    opacity: 1;
-    background: rgba(0, 0, 0, 0.2);
+
+.custom-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust positioning as needed */
 }
 
-.swiper-pagination-bullet-active {
-    color: #fff;
-    background: #007aff;
+.bullet {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #ccc; /* Default bullet color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.bullet.active {
+    background-color: #007aff; /* Active bullet color */
+    color: white;
 }

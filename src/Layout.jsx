@@ -1,5 +1,5 @@
 // src/Layout.jsx
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Slider from './components/Slider';
 import PopupForm from "./components/PopupForm";
 import './Layout.css';
@@ -7,9 +7,17 @@ import { gsap } from 'gsap';
 
 const Layout = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const swiperRef = useRef(null); // Reference to the Swiper instance
 
     const togglePopup = () => {
         setIsOpen(!isOpen);
+    };
+
+    const handleBulletClick = (index) => {
+        setActiveIndex(index); // Update active index state
+        const swiper = swiperRef.current.swiper; // Access the Swiper instance
+        swiper.slideTo(index); // Navigate to the clicked slide
     };
 
     useEffect(() => {
@@ -48,8 +56,19 @@ const Layout = () => {
                     <p>We’re working hard to bring you an amazing experience. Stay tuned!</p>
                     <button onClick={togglePopup}>Sign up</button>
                 </div>
-                {/* Include the Slider component */}
-                <Slider />
+                <Slider swiperRef={swiperRef} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
+                {/* Custom Pagination placed outside the Slider component */}
+                <div className="custom-pagination">
+                    {[0, 1, 2, 3].map((_, index) => (
+                        <span
+                            key={index}
+                            className={`bullet ${activeIndex === index ? 'active' : ''}`}
+                            onClick={() => handleBulletClick(index)} // Handle click to navigate
+                        >
+                            {index + 1}
+                        </span>
+                    ))}
+                </div>
                 <PopupForm isOpen={isOpen} togglePopup={togglePopup} />
             </main>
         </div>

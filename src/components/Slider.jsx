@@ -1,17 +1,13 @@
-
 // src/components/Slider.jsx
 import React, { useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
+import { Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
-import 'swiper/css/pagination'; // Ensure to import pagination styles
 import './Slider.css';
 import { gsap } from 'gsap';
 
-function Slider() {
-    const slideRefs = useRef([]);
-
+function Slider({ swiperRef, activeIndex, setActiveIndex }) {
     const animateSlide = (slide) => {
         if (!slide) return;
         const imageContent = slide.querySelector('.image-content img');
@@ -20,18 +16,20 @@ function Slider() {
     };
 
     useEffect(() => {
-        const swiper = slideRefs.current.swiper;
-        animateSlide(slideRefs.current[swiper.activeIndex]);
+        const swiper = swiperRef.current.swiper;
+
+        // Trigger animation for the initial active slide
+        animateSlide(swiper.slides[swiper.activeIndex]);
 
         swiper.on('slideChange', () => {
-            const activeIndex = swiper.activeIndex;
-            animateSlide(slideRefs.current[activeIndex]);
+            setActiveIndex(swiper.activeIndex); // Update active index on slide change
+            animateSlide(swiper.slides[swiper.activeIndex]);
         });
 
         return () => {
             swiper.off('slideChange');
         };
-    }, []);
+    }, [swiperRef, setActiveIndex]);
 
     const slides = [
         { imgSrc: '/images/slider/slide-01.png' },
@@ -42,15 +40,11 @@ function Slider() {
 
     return (
         <Swiper
-            ref={slideRefs}
-            effect="fade"
+            ref={swiperRef} // Reference to the Swiper instance
+            effect="fade" // Use fade effect
             speed={600}
-            modules={[Autoplay, EffectFade, Pagination]} // Include Pagination module
+            modules={[Autoplay, EffectFade]} // Include EffectFade module
             slidesPerView={1}
-            pagination={{
-                clickable: true, // Make bullets clickable
-                renderBullet: (index, className) => `<span class="${className}">${index + 1}</span>`, // Custom bullet render
-            }}
             autoplay={{
                 delay: 5500,
                 disableOnInteraction: false,
@@ -59,7 +53,7 @@ function Slider() {
         >
             {slides.map((slide, index) => (
                 <SwiperSlide key={index} className="slide">
-                    <div ref={(el) => (slideRefs.current[index] = el)} className="slide-content">
+                    <div className="slide-content">
                         <div className="image-content">
                             <img src={slide.imgSrc} alt={`Slide ${index + 1}`} />
                         </div>
@@ -68,6 +62,6 @@ function Slider() {
             ))}
         </Swiper>
     );
-};
+}
 
 export default Slider;
