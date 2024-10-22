@@ -5,6 +5,55 @@
 .main-content {
     position: relative;
     z-index: 10; /* Keep the content above the background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1230px;
+    margin: 0 auto;
+}
+.main-content .heading {
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 4rem;
+}
+.main-content .heading h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    max-width: 200px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 4rem;
+}
+
+.main-content .heading p {
+    font-size: 16px;
+    text-transform: capitalize;
+    line-height: 26px;
+    max-width: 550px;
+    opacity: .5;
+    font-weight: 300;
+}
+.main-content .heading button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    background: black;
+    margin-top: 30px;
+    border-radius: 4px;
+    color: white;
+    padding: 10px 30px;
+    cursor: pointer;
+    border:1px solid black;
+    transition: ease-in-out .25s;
+}
+.main-content .heading button:hover {
+    background: white;
+    color: black;
+    border:1px solid black;
+    transition: ease-in-out .25s;
 }
 
 .layout {
@@ -19,15 +68,15 @@
     height: 80px;
     position: fixed;
     width: 100%;
-    z-index: 100;
+    z-index: 10;
 }
 
 .logo {
-    max-height: 60px;
+    max-height: 80px;
 }
 .header-contents {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     align-items: center;
     padding: 20px 100px;
@@ -47,12 +96,130 @@
 .main-content {
     flex: 1;
 }
+
+.topbar {
+    background: black;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+}
 @media (max-width: 576px) {
+    .main-content {
+        width: 100%;
+        max-width: fit-content;
+        padding: 0 20px;
+        flex-direction: column;
+        justify-content: center;
+    }
     .header-contents {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         width: 100%;
         align-items: center;
         padding: 20px;
+    }
+    .topbar {
+        padding: 20px;
+        font-size: 12px;
+        text-align: center;
+        font-weight: 300;
+        line-height: 16px;
+    }
+    .logo {
+        max-height: 40px;
+    }
+    .main-content {
+        margin-top: 60px;
+    }
+    .main-content .heading {
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 4rem;
+        text-align: center;
+    }
+    .main-content .heading h1 {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+        max-width: 400px;
+        line-height: 1.5rem;
+        text-transform: uppercase;
+    }
+    .main-content .heading button {
+        display: inline-flex;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .main-content {
+        width: 90%;
+        max-width: fit-content;
+    }
+    .header-contents {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        padding: 20px;
+    }
+    .logo {
+        max-height: 60px;
+    }
+    .main-content {
+        margin-top: 0px;
+    }
+    .main-content .heading {
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 4rem;
+        text-align: left;
+    }
+    .main-content .heading h1 {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+        max-width: 400px;
+        line-height: 1.5rem;
+        text-transform: uppercase;
+    }
+    .main-content .heading button {
+        display: inline-flex;
+    }
+
+}
+
+@media (min-width: 992px) {
+
+    .main-content .heading {
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 4rem;
+    }
+    .main-content .heading h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        max-width: 200px;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 4rem;
+    }
+
+    .main-content .heading p {
+        font-size: 16px;
+        text-transform: capitalize;
+        line-height: 26px;
+        max-width: 550px;
+        opacity: .5;
+        font-weight: 300;
+    }
+    .image-content img {
+        max-width: 600px;
+        height: auto;
     }
 }

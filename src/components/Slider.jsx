@@ -1,77 +1,56 @@
+
 // src/components/Slider.jsx
+import React, { useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useRef, useEffect } from 'react';
 import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade'; // Import fade effect styles
+import 'swiper/css/effect-fade';
+import 'swiper/css/pagination'; // Ensure to import pagination styles
 import './Slider.css';
 import { gsap } from 'gsap';
 
-const Slider = () => {
+function Slider() {
     const slideRefs = useRef([]);
 
-    // GSAP animation function for text and image
     const animateSlide = (slide) => {
-        const textContent = slide.querySelector('.text-content');
+        if (!slide) return;
         const imageContent = slide.querySelector('.image-content img');
-
         const tl = gsap.timeline();
-
-        // Text animation: From top to center
-        tl.fromTo(
-            textContent,
-            { opacity: 0, y: -150 },
-            { opacity: 1, y: 0, duration: 2, ease: 'power3.out' }
-        );
-
-        // Image animation: From bottom with fade-in
-        tl.fromTo(
-            imageContent,
-            { opacity: 0, y: 150 },
-            { opacity: 1, y: 0, duration: 3, ease: 'power3.out' },
-            '<0.5' // Start slightly overlapping with text animation
-        );
+        tl.fromTo(imageContent, { opacity: 0, y: 150 }, { opacity: 1, y: 0, duration: 3, ease: 'power3.out' }, '<0.5');
     };
 
     useEffect(() => {
-        const swiperEl = document.querySelector('.swiper-container').swiper;
+        const swiper = slideRefs.current.swiper;
+        animateSlide(slideRefs.current[swiper.activeIndex]);
 
-        // Trigger animation for the initial active slide
-        animateSlide(slideRefs.current[swiperEl.activeIndex]);
-
-        // Add event listener to animate on every slide change
-        swiperEl.on('slideChange', () => {
-            const activeIndex = swiperEl.activeIndex;
+        swiper.on('slideChange', () => {
+            const activeIndex = swiper.activeIndex;
             animateSlide(slideRefs.current[activeIndex]);
         });
+
+        return () => {
+            swiper.off('slideChange');
+        };
     }, []);
 
     const slides = [
-        {
-            heading: 'Skincare Pro Advisor',
-            text: 'With our expertise, we craft tailored strategies that align with your business goals, creating captivating brand identities and positioning you for growth.',
-            imgSrc: '/images/slider/slide-01.png',
-        },
-        {
-            heading: 'BOLVER BEAUTY SERVICES',
-            text: 'We create captivating brand identities and strategies that align with your business goals and empower your business to thrive in today’s competitive landscape.',
-            imgSrc: '/images/slider/slide-02.png',
-        },
-        {
-            heading: 'Instant Makeup Try-On',
-            text: 'Explore our innovative instant makeup try-on feature, designed to provide customers with a seamless shopping experience.',
-            imgSrc: '/images/slider/slide-03.png',
-        },
+        { imgSrc: '/images/slider/slide-01.png' },
+        { imgSrc: '/images/slider/slide-02.png' },
+        { imgSrc: '/images/slider/slide-03.png' },
+        { imgSrc: '/images/slider/slide-04.png' },
     ];
 
     return (
         <Swiper
-            effect="fade" // Use fade effect
+            ref={slideRefs}
+            effect="fade"
             speed={600}
-            pagination={{ clickable: true }}
-            modules={[Autoplay, EffectFade, Pagination]} // Include EffectFade module
+            modules={[Autoplay, EffectFade, Pagination]} // Include Pagination module
             slidesPerView={1}
+            pagination={{
+                clickable: true, // Make bullets clickable
+                renderBullet: (index, className) => `<span class="${className}">${index + 1}</span>`, // Custom bullet render
+            }}
             autoplay={{
                 delay: 5500,
                 disableOnInteraction: false,
@@ -81,10 +60,6 @@ const Slider = () => {
             {slides.map((slide, index) => (
                 <SwiperSlide key={index} className="slide">
                     <div ref={(el) => (slideRefs.current[index] = el)} className="slide-content">
-                        <div className="text-content">
-                            <h1>{slide.heading}</h1>
-                            <p>{slide.text}</p>
-                        </div>
                         <div className="image-content">
                             <img src={slide.imgSrc} alt={`Slide ${index + 1}`} />
                         </div>
