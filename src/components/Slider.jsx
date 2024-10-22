@@ -1,5 +1,5 @@
 // src/components/Slider.jsx
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css';
