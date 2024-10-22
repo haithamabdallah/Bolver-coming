@@ -16,6 +16,7 @@
     font-weight: 700;
     text-transform: uppercase;
     line-height: 4rem;
+    position: relative;
 }
 .main-content .heading h1 {
     font-size: 3rem;
@@ -159,6 +160,7 @@
     .main-content {
         width: 90%;
         max-width: fit-content;
+        grid-gap: 30px;
     }
     .header-contents {
         display: flex;

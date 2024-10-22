@@ -64,9 +64,7 @@ const Layout = () => {
                             key={index}
                             className={`bullet ${activeIndex === index ? 'active' : ''}`}
                             onClick={() => handleBulletClick(index)} // Handle click to navigate
-                        >
-                            {index + 1}
-                        </span>
+                        />
                     ))}
                 </div>
                 <PopupForm isOpen={isOpen} togglePopup={togglePopup} />
