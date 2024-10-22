@@ -54,7 +54,7 @@ const Layout = () => {
                 <div className="heading">
                     <h1>Something big is coming!</h1>
                     <p>We’re working hard to bring you an amazing experience. Stay tuned!</p>
-                    <button onClick={togglePopup}>Sign up</button>
+                    <button onClick={togglePopup}>Contact us</button>
                 </div>
                 <Slider swiperRef={swiperRef} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
                 {/* Custom Pagination placed outside the Slider component */}

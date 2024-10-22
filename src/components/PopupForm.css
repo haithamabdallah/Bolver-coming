@@ -22,8 +22,9 @@
 }
 
 .popup-content h2 {
+    margin-top: 30px;
     margin-bottom: 30px;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: 1px;
     text-align: left;
@@ -42,7 +43,8 @@
     font-weight: 300;
 }
 
-.popup-content form input {
+.popup-content form input,
+.popup-content form textarea{
     width: 100%;
     margin-top: 5px;
     padding: 10px 15px;

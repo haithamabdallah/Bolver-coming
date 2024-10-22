@@ -4,13 +4,11 @@
     <list default="true" id="a08c9ec5-eab5-46e6-b6ad-c8f84bd1efb2" name="Default Changelist" comment="ignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/0.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/0.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/1.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/1.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/index.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/index.pack.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Layout.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Layout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Slider.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PopupForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupForm.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PopupForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupForm.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +55,7 @@
       <workItem from="1729504552679" duration="808000" />
       <workItem from="1729505412010" duration="1048000" />
       <workItem from="1729537417615" duration="1176000" />
-      <workItem from="1729580401006" duration="11910000" />
+      <workItem from="1729580401006" duration="12456000" />
     </task>
     <task id="LOCAL-00001" summary="ignore">
       <created>1729505521956</created>

@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import './PopupForm.css';
 
-
 function PopupForm({ isOpen, togglePopup }) {
     const [formData, setFormData] = React.useState({
         fullName: '',
         email: '',
+        phone: '',
+        subject: '',
+        message: '',
     });
 
     // Handle form input change
@@ -23,8 +25,6 @@ function PopupForm({ isOpen, togglePopup }) {
         console.log('Form Data:', formData);
         togglePopup(); // Close the popup after submit
     };
-
-
 
     useEffect(() => {
         // Close popup if clicked outside of the content
@@ -47,7 +47,7 @@ function PopupForm({ isOpen, togglePopup }) {
             {isOpen && (
                 <div className="popup">
                     <div className="popup-content">
-                        <h2>Contact Form</h2>
+                        <h2>If you have any questions or inquiries, please fill out the form below, and we will get back to you as soon as possible.</h2>
                         <form onSubmit={handleSubmit}>
                             <label>
                                 Full Name:
@@ -65,6 +65,35 @@ function PopupForm({ isOpen, togglePopup }) {
                                     type="email"
                                     name="email"
                                     value={formData.email}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </label>
+                            <label>
+                                Phone:
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    value={formData.phone}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </label>
+                            <label>
+                                Subject:
+                                <input
+                                    type="text"
+                                    name="subject"
+                                    value={formData.subject}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </label>
+                            <label>
+                                Message:
+                                <textarea
+                                    name="message"
+                                    value={formData.message}
                                     onChange={handleChange}
                                     required
                                 />
