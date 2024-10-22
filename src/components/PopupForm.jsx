@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import emailjs from 'emailjs-com'; // Import EmailJS
 import './PopupForm.css';
 
-function PopupForm({ isOpen, togglePopup }) {
+export default function PopupForm({ isOpen, togglePopup }) {
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
@@ -136,4 +136,3 @@ function PopupForm({ isOpen, togglePopup }) {
     );
 }
 
-export default PopupForm;

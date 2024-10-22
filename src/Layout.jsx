@@ -4,8 +4,9 @@ import Slider from './components/Slider';
 import PopupForm from "./components/PopupForm";
 import './Layout.css';
 import { gsap } from 'gsap';
+import SocialIcons from "./components/SocialIcons";
 
-const Layout = () => {
+export default function Layout() {
     const [isOpen, setIsOpen] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
     const swiperRef = useRef(null); // Reference to the Swiper instance
@@ -68,9 +69,8 @@ const Layout = () => {
                     ))}
                 </div>
                 <PopupForm isOpen={isOpen} togglePopup={togglePopup} />
+                <SocialIcons />
             </main>
         </div>
     );
 };
-
-export default Layout;

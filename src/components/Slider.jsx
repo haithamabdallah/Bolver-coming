@@ -7,7 +7,7 @@ import 'swiper/css/effect-fade';
 import './Slider.css';
 import { gsap } from 'gsap';
 
-function Slider({ swiperRef, activeIndex, setActiveIndex }) {
+export default function Slider({ swiperRef, activeIndex, setActiveIndex }) {
     const animateSlide = (slide) => {
         if (!slide) return;
         const imageContent = slide.querySelector('.image-content img');
@@ -32,10 +32,10 @@ function Slider({ swiperRef, activeIndex, setActiveIndex }) {
     }, [swiperRef, setActiveIndex]);
 
     const slides = [
-        { imgSrc: '/images/slider/slide-01.png' },
-        { imgSrc: '/images/slider/slide-02.png' },
-        { imgSrc: '/images/slider/slide-03.png' },
-        { imgSrc: '/images/slider/slide-04.png' },
+        { imgSrc: '/images/slider/slide-1.png' },
+        { imgSrc: '/images/slider/slide-2.png' },
+        { imgSrc: '/images/slider/slide-3.png' },
+        { imgSrc: '/images/slider/slide-4.png' },
     ];
 
     return (
@@ -64,4 +64,3 @@ function Slider({ swiperRef, activeIndex, setActiveIndex }) {
     );
 }
 
-export default Slider;

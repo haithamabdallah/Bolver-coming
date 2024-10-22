@@ -1,0 +1,35 @@
+.social-icons {
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icons h1 {
+    font-size: 16px;
+    font-weight: 700;
+    display: inline-flex;
+    margin-right: 10px;
+}
+
+.icons {
+    display: inline-flex;
+    gap: 14px;
+    font-size: 14px !important;
+
+}
+
+.icons a {
+    color: #000;
+    transition: color 0.3s ease;
+    font-size: 14px !important;
+}
+
+
+@media (max-width: 576px) {
+    .social-icons {
+        position: relative;
+    }
+}
